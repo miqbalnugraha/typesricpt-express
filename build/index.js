@@ -4,8 +4,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const app = (0, express_1.default)();
-app.route("/").get((req, res) => {
-    res.send("halo, ini router pertama saya");
+class App {
+    constructor() {
+        this.app = (0, express_1.default)();
+        this.routes();
+    }
+    routes() {
+        this.app.route("/").get((req, res) => {
+            res.send("ini adalah route menggunakan typescript");
+        });
+    }
+}
+const port = 8000;
+const app = new App().app;
+app.listen(port, () => {
+    console.log("Aplikasi ini berjalan di port " + port);
 });
-app.listen(8000);
