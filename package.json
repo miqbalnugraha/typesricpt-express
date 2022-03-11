@@ -1,0 +1,17 @@
+{
+  "name": "typescript-express",
+  "packageManager": "yarn@3.1.1",
+  "scripts": {
+    "tsc": "del -f build && tsc",
+    "ts": "del -f build && tsc -w",
+    "dev": "nodemon ./build/index.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
